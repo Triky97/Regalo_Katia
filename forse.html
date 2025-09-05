@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domanda per Katia</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("Katia_arrabiata.jpeg"); /* metti l'immagine nella stessa cartella */
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;/* evita di ripeterla */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .titolo-riquadro {
+      display: inline-block;
+      background-color: rgba(255, 0, 0, 0.5); /* rosso semitrasparente */
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: block;
+      width: 200px;
+      height: 60px;
+      font-size: 20px;
+      margin: 10px auto;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    h1, h2 {
+  text-shadow: 2px 2px 5px black;
+    }
+  </style>
+
+  <script>
+
+  let siCount = 0; // contatore per il pulsante NO!!
+  let noCount = 0; // contatore per il pulsante NO!!
+
+      function noClick() {
+    noCount++; // incrementa ad ogni click
+
+    if (noCount < 2) {
+      alert("Penso ci sia un errore... Hai premuto 'NO' " + noCount + " volte! Riprova");
+    }else if (noCount === 2) {
+      alert("Ahahhahahaha... Riproviamo😑");
+    } else if (noCount === 3) {
+      alert("OK ho capito... Riproviamo😊");
+      document.getElementById("noButton").style.display = "none"; // nasconde il pulsante
+    }
+  }
+
+  function siClick() {
+    siCount++; // incremento contatore
+
+    if (siCount === 1) {
+      // primo click → mostra alert
+      alert("Grazie! 💖 Ora premi di nuovo e ricevi il tuo regalo🥰");
+    } else if (siCount === 2) {
+      // secondo click → scarica file
+      const link = document.createElement("a");
+      link.href = "Regalo Katia Boldo.pdf"; // il file da scaricare
+      link.download = "Regalo Katia Boldo.pdf"; // nome con cui verrà salvato
+      link.click();
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1 class="titolo-riquadro">NON E' DIVERTENTE!!</h1>
+  <h2>Riproviamo</h2>
+
+  <div class="button-container">
+    <button class="button" onclick="siClick()">SI</button>
+    <button class="button" id="noButton" onclick="noClick()">NO!!</button>
+  </div>
+</body>
+</html>

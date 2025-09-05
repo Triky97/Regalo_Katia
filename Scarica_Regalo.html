@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<script>
+    // Funzione per mostrare il secondo pulsante
+    function showAnotherButton() {
+        document.getElementById("anotherButton").style.display = "block";
+    }
+
+    function xDono() {
+        // Inserisci qui l'URI del brano su Spotify
+        var trackURI = "spotify:track:3h0v8BiwP1qzlCX7TXrsDF?si=4084a6d0d8b649c6"; // Esempio di URI di un brano
+        // Costruisci l'URL del brano su Spotify
+        var url = "https://open.spotify.com/track/" + trackURI.split(":")[2];
+        // Apre il link del brano su Spotify in una nuova scheda del browser
+        window.open(url, "_blank");
+    }
+    function TVB() {
+        // Inserisci qui l'URI del brano su Spotify
+        var trackURI = "spotify:track:4AHYOkXx4thKp2nlfTimFh?si=499951f42ccb4830"; // Esempio di URI di un brano
+        // Costruisci l'URL del brano su Spotify
+        var url = "https://open.spotify.com/track/" + trackURI.split(":")[2];
+        // Apre il link del brano su Spotify in una nuova scheda del browser
+        window.open(url, "_blank");
+    }
+
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titolo con riquadro</title>
+    <H1>Mateo vorrebbe chiederti una cosa</H1>
+    <h2>Stasera può farti le coccole?</h2>
+
+    <style>
+    .titolo-riquadro {
+      display: inline-block;       /* adatta il riquadro al testo */
+      background-color: rgba(255, 0, 0, 0.5); /* rosso semitrasparente */
+      color: white;                /* testo leggibile sul rosso */
+      padding: 10px 20px;          /* spazio interno */
+      border-radius: 8px;          /* angoli arrotondati */
+      font-family: Arial, sans-serif;
+    }
+        .button-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .button {
+            display: block;
+            width: 200px;
+            height: 60px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="button-container">
+        <button class="button" id="TVB" onclick="TVB()">SI</button>
+        <button class="button" id="xDono" onclick="xDono()">NO!!</button>
+        <button class="button" id="xDono" onclick="xDono()">FORSE</button>
+    </div>
+
+
+</body>
+</html>
