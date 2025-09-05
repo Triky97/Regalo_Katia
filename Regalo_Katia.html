@@ -81,20 +81,30 @@
     }
   }
 
-  function siClick() {
-    siCount++; // incremento contatore
+function siClick() {
+  siCount++; // incremento contatore
 
-    if (siCount === 1) {
-      // primo click → mostra alert
-      alert("Grazie! 💖 Ora premi di nuovo e ricevi il tuo regalo🥰");
-    } else if (siCount === 2) {
-      // secondo click → scarica file
+  if (siCount === 1) {
+    // primo click → mostra alert
+    alert("Grazie! 💖 Ora premi di nuovo e ricevi il tuo regalo🥰");
+  } else if (siCount === 2) {
+    // secondo click → richiede password
+    const password = "05.09.2000";
+    const user = prompt("Inserisci la Data di Nascita (GG.MM.AAAA):");
+
+    if (user === password) {
+      // se la password è corretta → scarica il file
       const link = document.createElement("a");
-      link.href = "Regalo Katia Boldo.pdf"; // il file da scaricare
-      link.download = "Regalo Katia Boldo.pdf"; // nome con cui verrà salvato
+      link.href = "Regalo Katia Boldo.pdf";
+      link.download = "Regalo Katia Boldo.pdf";
       link.click();
+    } else {
+      alert("Riprova!");
+      // opzionale: decrementa il contatore se vuoi che possa riprovare
+      siCount--; 
     }
   }
+}
   </script>
 </head>
 <body>
@@ -108,4 +118,5 @@
   </div>
 </body>
 </html>
+
 
